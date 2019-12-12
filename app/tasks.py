@@ -33,9 +33,11 @@ STATES = frozenset(
 def send_email_to_idle_users():
     data = []
 
+    # select new created users (from the criteria set in config)
     idle_time_limit = timezone.now() - timedelta(seconds=settings.IDLE_ELAPSED_TIME_SEC)
-
     for user in get_user_model().objects.filter(date_joined__lte=idle_time_limit):
+
+        # check if a task has already been triggered for the current user
         if TaskResult.objects.filter(
             task_name="send_email_to_idle_users",
             json_result__json_result__data__contains=[{"user_id": user.id}],
@@ -48,4 +50,5 @@ def send_email_to_idle_users():
         logger.info("send email to user {}: {}".format(user.id, content))
         data.append({"user_id": user.id, "user_email": user.email, "content": content})
 
+    # return a dict result that will be mapped to the task_result JSON field
     return dict(data=data)
