@@ -139,7 +139,7 @@ description = "A high-level Python Web framework that encourages rapid developme
 name = "django"
 optional = false
 python-versions = ">=3.5"
-version = "2.2"
+version = "2.2.8"
 
 [package.dependencies]
 pytz = "*"
@@ -465,7 +465,7 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["pathlib2", "contextlib2", "unittest2"]
 
 [metadata]
-content-hash = "d8e2c997c999843fc282e21198e080c352d0a3685cf98199170f1383b16f2bc5"
+content-hash = "01a5f1a21860569cb65e570a8d239bc8d25d37187b1988e46bf830d645d40e7c"
 python-versions = "3.7"
 
 [metadata.files]
@@ -506,8 +506,8 @@ colorama = [
     {file = "colorama-0.4.3.tar.gz", hash = "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"},
 ]
 django = [
-    {file = "Django-2.2-py3-none-any.whl", hash = "sha256:a2814bffd1f007805b19194eb0b9a331933b82bd5da1c3ba3d7b7ba16e06dc4b"},
-    {file = "Django-2.2.tar.gz", hash = "sha256:7c3543e4fb070d14e10926189a7fcf42ba919263b7473dceaefce34d54e8a119"},
+    {file = "Django-2.2.8-py3-none-any.whl", hash = "sha256:fa98ec9cc9bf5d72a08ebf3654a9452e761fbb8566e3f80de199cbc15477e891"},
+    {file = "Django-2.2.8.tar.gz", hash = "sha256:a4ad4f6f9c6a4b7af7e2deec8d0cbff28501852e5010d6c2dc695d3d1fae7ca0"},
 ]
 django-celery-results = [
     {file = "django_celery_results-1.1.2-py2.py3-none-any.whl", hash = "sha256:932277e9382528f74778b30cf90e17941cba577b7d73cee09ed55e4972972c32"},
