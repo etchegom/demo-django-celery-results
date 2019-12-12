@@ -1,0 +1,48 @@
+version: "3"
+
+services:
+  db:
+    image: postgres:12-alpine
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=ddcr
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+  broker:
+    image: redis:5-alpine
+    ports:
+      - 6379:6379
+
+  # app:
+  #   build: .
+  #   command: server
+  #   environment:
+  #     WAIT_HOSTS: db:5432,broker:6379
+  #   env_file: server.env
+  #   ports:
+  #     - 8000:8000
+  #   volumes:
+  #     - .:/code
+  #   depends_on:
+  #     - db
+  #     - broker
+
+  # worker:
+  #   build: .
+  #   command: worker
+  #   environment:
+  #     WAIT_HOSTS: db:5432,broker:6379
+  #   env_file: server.env
+  #   volumes:
+  #     - .:/code
+  #   depends_on:
+  #     - db
+  #     - broker
+
+volumes:
+  pg_data:
