@@ -18,31 +18,31 @@ services:
     ports:
       - 6379:6379
 
-  # app:
-  #   build: .
-  #   command: server
-  #   environment:
-  #     WAIT_HOSTS: db:5432,broker:6379
-  #   env_file: server.env
-  #   ports:
-  #     - 8000:8000
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - db
-  #     - broker
+  app:
+    build: .
+    command: server
+    environment:
+      WAIT_HOSTS: db:5432,broker:6379
+    env_file: server.env
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+      - broker
 
-  # worker:
-  #   build: .
-  #   command: worker
-  #   environment:
-  #     WAIT_HOSTS: db:5432,broker:6379
-  #   env_file: server.env
-  #   volumes:
-  #     - .:/code
-  #   depends_on:
-  #     - db
-  #     - broker
+  worker:
+    build: .
+    command: worker
+    environment:
+      WAIT_HOSTS: db:5432,broker:6379
+    env_file: server.env
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+      - broker
 
 volumes:
   pg_data:
