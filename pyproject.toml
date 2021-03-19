@@ -7,7 +7,7 @@ authors = ["Matthieu Etchegoyen <etchegom@gmail.com>"]
 [tool.poetry.dependencies]
 python = "3.7"
 celery = "^4.3.0"
-django = "2.2.8"
+django = "2.2.18"
 psycopg2-binary = "^2.8.4"
 redis = "^3.3.11"
 django-environ = "^0.4.5"
